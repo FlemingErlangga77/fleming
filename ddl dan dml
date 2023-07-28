@@ -1,0 +1,331 @@
+mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 3
+Server version: 10.11.4-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create user 'fleming'@'localhost';
+Query OK, 0 rows affected (0.011 sec)
+
+MariaDB [(none)]> grant all privileges on *.* to 'fleming'@'localhost';
+Query OK, 0 rows affected (0.082 sec)
+
+MariaDB [(none)]> exit
+Bye
+~ $ mysql -u fleming
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 4
+Server version: 10.11.4-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database fleming;
+Query OK, 1 row affected (0.034 sec)
+
+MariaDB [(none)]> use fleming
+Database changed
+MariaDB [fleming]> create tabel tokobuju(
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tabel tokobuju(
+)' at line 1
+MariaDB [bahrul]> create tabel tokobuku(
+    -> kode_buku int primary key(10),
+    -> nama_buku varchar(100),
+    -> nomor_isbn char(50),
+    -> penerbit varchar(70),
+    -> tahun_terbit varchar(80),
+    -> penulis varchar(90),
+    -> stok char(200),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tabel tokobuku(
+kode_buku int primary key(10),
+nama_buku varchar(100),
+nomor_...' at line 1
+MariaDB [fleming]> create tabel tokobuku(              -> kode_buku int primary key(10),                 -> nama_buku varchar(100),                        -> nomor_isbn char(50),                           -> penerbit varchar(70),                          -> tahun_terbit varchar(80),                      -> penulis varchar(90),                           -> stok char(200)                                 -> );                                         ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tabel tokobuku(
+kode_buku int primary key(10),
+nama_buku varchar(100),
+nomor_...' at line 1
+MariaDB [fleming]> create tabel tokobuku(              -> kode_buku varchar key(10),                     ->                                                -> ;                                          ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tabel tokobuku(
+kode_buku varchar key(10),' at line 1
+MariaDB [bahrul]> create tabel tokobuku(              -> kode_buku varchar(10),                         -> nama_buku varchar(100),                        -> nomor_isbn char(50),                           -> penerbit varchar(70),                          -> tahun_terbit varchar(80),                      -> penulis varchar(90),                           -> stok char(200)                                 -> );                                         ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tabel tokobuku(
+kode_buku varchar(10),
+nama_buku varchar(100),
+nomor_isbn cha...' at line 1
+MariaDB [fleming]> create table tokobuku(              -> kode_buku varchar(10),                         -> nama_buku varchar(100),                        -> nomor_isbn char(50),                           -> penerbit varchar(70),                          -> tahun_terbit varchar(80),                      -> penulis varchar(90),                           -> stok char(200)                                 -> );                                         Query OK, 0 rows affected (0.118 sec)
+MariaDB [bahrul]> insert into tokobuku values()
+    -> ;
+Query OK, 1 row affected (0.049 sec)
+
+MariaDB [fleming]> insert into tokobuku values('B001,'sikancil','36847383','gramedia','2009','firman','300');                                              '>
+    '> ;
+    '> insert into tokobuku values('B001,'sikancil','36847383','gramedia','2009','firman','300');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sikancil','36847383','gramedia','2009','firman','300');
+
+;
+insert into tokobu...' at line 1
+MariaDB [fleming]> select * from tokobuku;
++-----------+-----------+------------+----------+--------------+---------+------+
+| kode_buku | nama_buku | nomor_isbn | penerbit | tahun_terbit | penulis | stok |
++-----------+-----------+------------+----------+--------------+---------+------+
+| NULL      | NULL      | NULL       | NULL     | NULL         | NULL    | NULL |
++-----------+-----------+------------+----------+--------------+---------+------+
+1 row in set (0.083 sec)
+
+MariaDB [fleming]> insert into tokobuku values('B001,'sikancil','36847383','gramedia','2009','firman','300');
+    '>
+    '>
+    '>                                                '>
+    '>
+    '> insert into tokobuku values('B001,'sikancil','36847383','gramedia','2009','firman','300');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sikancil','36847383','gramedia','2009','firman','300');
+
+
+
+
+
+insert into toko...' at line 1
+MariaDB [fleming]> insert into tokobuku values('B001,'sikancil','36847383','gramedia','2009','firman','300);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sikancil','36847383','gramedia','2009','firman','300)' at line 1
+MariaDB [fleming]> insert into tokobuku values('B001,'sikancil','36847383','gramedia','2009','firman','300');
+    '> );
+    '> );
+    '> exit
+    '> Ctrl-C -- exit!
+Aborted
+~ $ use fleming
+No command use found, did you mean:
+ Command cuse in package cuse from the x11-repo repository
+~ $ use fleming;
+No command use found, did you mean:
+ Command cuse in package cuse from the x11-repo repository
+~ $ mysql -u bahrul
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 5
+Server version: 10.11.4-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| fleming            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| test               |
++--------------------+
+6 rows in set (0.034 sec)
+
+MariaDB [(none)]> use fleming;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [fleming]> show tables;
++------------------+
+| Tables_in_fleming |
++------------------+
+| tokobuku         |
++------------------+
+1 row in set (0.004 sec)
+
+MariaDB [fleming]> select * from tokobuku;
++-----------+-----------+------------+----------+--------------+---------+------+
+| kode_buku | nama_buku | nomor_isbn | penerbit | tahun_terbit | penulis | stok |
++-----------+-----------+------------+----------+--------------+---------+------+
+| NULL      | NULL      | NULL       | NULL     | NULL         | NULL    | NULL |
++-----------+-----------+------------+----------+--------------+---------+------+
+1 row in set (0.030 sec)
+
+MariaDB [fleming]> insert into tokobuku values('B001', 'Kancil', '100001', 'Sony', '2016', 'Flem', '60');
+Query OK, 1 row affected (0.068 sec)
+
+MariaDB [fleming]> select * from tokobuku;
++-----------+-----------+------------+----------+--------------+---------+------+
+| kode_buku | nama_buku | nomor_isbn | penerbit | tahun_terbit | penulis | stok |
++-----------+-----------+------------+----------+--------------+---------+------+
+| NULL      | NULL      | NULL       | NULL     | NULL         | NULL    | NULL |
+| B001      | Kancil    | 100001     | Sony     | 2016         | Flem    | 60   |
++-----------+-----------+------------+----------+--------------+---------+------+
+2 rows in set (0.022 sec)
+
+MariaDB [fleming]> delete from tokobuku where kode_buku = NULL;
+Query OK, 0 rows affected (0.027 sec)
+
+MariaDB [fleming]> select * from tokobuku;
++-----------+-----------+------------+----------+--------------+---------+------+
+| kode_buku | nama_buku | nomor_isbn | penerbit | tahun_terbit | penulis | stok |
++-----------+-----------+------------+----------+--------------+---------+------+
+| NULL      | NULL      | NULL       | NULL     | NULL         | NULL    | NULL |
+| B001      | Kancil    | 100001     | Sony     | 2016         | Flem    | 60   |
++-----------+-----------+------------+----------+--------------+---------+------+
+2 rows in set (0.003 sec)
+
+MariaDB [fleming]> drop table tokobuku;
+Query OK, 0 rows affected (0.067 sec)
+
+MariaDB [fleming]> show tables;
+Empty set (0.002 sec)
+
+MariaDB [fleming]> create table tokobuku(
+    -> kode_buku varchar(100),
+    -> nama_buku varchar(100),
+    -> nomor_isbn char(50),
+    -> penerbit varchar(100),
+    -> tahun_terbit char(50),
+    -> penulis varchar(100),
+    -> stok char(100)
+    -> );
+Query OK, 0 rows affected (0.061 sec)
+
+MariaDB [fleming]> insert into tokobuku values('B001', 'Kancil', '100001', 'Sony', '2016', 'Flem', '60');                                    Query OK, 1 row affected (0.014 sec)
+
+MariaDB [fleming]> select * from tokobuku;                             +-----------+-----------+------------+----------+--------------+---------+------+
+| kode_buku | nama_buku | nomor_isbn | penerbit | tahun_terbit | penulis | stok |
++-----------+-----------+------------+----------+--------------+---------+------+
+| B001      | Kancil    | 100001     | Sony     | 2016         | Flem    | 60   |
++-----------+-----------+------------+----------+--------------+---------+------+
+1 row in set (0.004 sec)
+
+MariaDB [fleming]> insert into tokobuku values('B002', 'pemburusyafaat', '100034', 'kony', '2099', 'anfi', '99');
+Query OK, 1 row affected (0.094 sec)
+
+MariaDB [fleming]> select * from tokobuku;                  +-----------+----------------+------------+----------+--------------+---------+------+
+| kode_buku | nama_buku      | nomor_isbn | penerbit | tahun_terbit | penulis | stok |
++-----------+----------------+------------+----------+--------------+---u------+------+
+| B001      | Kancil         | 100001     | Sony     | 2016         | Flem    | 60   |
+| B002      | pemburusyafaat | 100034     | kony     | 2099         | anfi    | 99   |
++-----------+----------------+------------+----------+--------------+---------+------+
+2 rows in set (0.032 sec)
+
+MariaDB [fleming]> create table distributor(
+    -> kode_distributor int primary key auto increment,
+    -> distributor varchar(20)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'auto increment,
+distributor varchar(20)
+)' at line 2
+MariaDB [fleming]> create table distributor(                    -> kode_distributor int primary key auto_increment,        -> distributor varchar(20)                                 -> );                                                  Query OK, 0 rows affected (0.057 sec)
+
+MariaDB [fleming]> insert into distributor values('','joni');
+ERROR 1366 (22007): Incorrect integer value: '' for column `bahrul`.`distributor`.`kode_distributor` at row 1
+MariaDB [fleming]> insert into distributor values('', 'joni');
+ERROR 1366 (22007): Incorrect integer value: '' for column `bahrul`.`distributor`.`kode_distributor` at row 1
+MariaDB [fleming]> insert into distributor values ('', 'joni');
+ERROR 1366 (22007): Incorrect integer value: '' for column `bahrul`.`distributor`.`kode_distributor` at row 1
+MariaDB [fleming]> insert into distributor values ('001', 'joni');
+Query OK, 1 row affected (0.030 sec)
+
+MariaDB [fleming]> select * from distributor;               +------------------+-------------+                         | kode_distributor | distributor |
++------------------+-------------+
+|                1 | joni        |
++------------------+-------------+
+1 row in set (0.018 sec)
+
+MariaDB [fleming]> create table pembelian(
+    -> id int primary key auto_increment,
+    -> nama_pembeli varchar(30),
+    -> judul_buku varchar(40),
+    -> jumlah char(60),
+    -> harga char(70)
+    -> );
+Query OK, 0 rows affected (0.039 sec)
+
+MariaDB [fleming]> insert into pembelian values('','jawir','siksakubur','3','30.000');
+ERROR 1366 (22007): Incorrect integer value: '' for column `fleming`.`pembelian`.`id` at row 1
+MariaDB [fleming]> insert into distributor values('1','joni','siksakubur','2','300.000');                              ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [fleming]> insert into pembelian values('','joni','siksakubur','2','300.000');
+ERROR 1366 (22007): Incorrect integer value: '' for column `fleming`.`pembelian`.`id` at row 1
+MariaDB [fleming]> insert into pembelian values('1','joni','siksakubur','2','300.000');
+Query OK, 1 row affected (0.012 sec)
+
+MariaDB [fleming]> select * from pembelian;
++----+--------------+------------+--------+---------+
+| id | nama_pembeli | judul_buku | jumlah | harga   |
++----+--------------+------------+--------+---------+
+|  1 | joni         | siksakubur | 2      | 300.000 |
++----+--------------+------------+--------+---------+
+1 row in set (0.002 sec)
+
+MariaDB [fleming]> insert into pembelian values('2','toti','kancil','6','90.000');
+Query OK, 1 row affected (0.042 sec)
+
+MariaDB [fleming]> select * from pembelian;                 +----+--------------+------------+--------+---------+
+| id | nama_pembeli | judul_buku | jumlah | harga   |
++----+--------------+------------+--------+---------+
+|  1 | joni         | siksakubur | 2      | 300.000 |
+|  2 | toti         | kancil     | 6      | 90.000  |
++----+--------------+------------+--------+---------+
+2 rows in set (0.004 sec)
+
+MariaDB [fleming]> create table pelanggan(
+    -> id int primary key auto_increment,
+    -> nama varchar(30),
+    -> jenis_buku varchar(40),
+    -> kode_buku varchar(50),
+    -> jumlah char(70)
+    -> );
+Query OK, 0 rows affected (0.052 sec)
+
+MariaDB [fleming]> insert into pelanggan values('1','joni','siksakubur','335','300.000');                              Query OK, 1 row affected (0.019 sec)
+
+MariaDB [fleming]> select * from pelanggan;                 +----+------+------------+-----------+---------+           | id | nama | jenis_buku | kode_buku | jumlah  |
++----+------+------------+-----------+---------+
+|  1 | joni | siksakubur | 335       | 300.000 |
++----+------+------------+-----------+---------+
+1 row in set (0.003 sec)
+
+MariaDB [fleming]> insert into pelanggan values('1','joni','percintaan','775','780.000');
+ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'
+MariaDB [fleming]> insert into pelanggan values('2','joni','percintaan','775','780.000');
+Query OK, 1 row affected (0.016 sec)
+
+MariaDB [fleming]> select * from pelanggan;                 +----+------+------------+-----------+---------+
+| id | nama | jenis_buku | kode_buku | jumlah  |
++----+------+------------+-----------+---------+
+|  1 | joni | siksakubur | 335       | 300.000 |
+|  2 | joni | percintaan | 775       | 780.000 |
++----+------+------------+-----------+---------+
+2 rows in set (0.005 sec)
+
+MariaDB [fleming]> create table penjualan(
+    -> kode_buku varchar(50),
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 2
+MariaDB [fleming]> create table penjualan(                      -> kode_buku char(50),
+    -> judul_buku varchar(60),
+    -> nama varchar(70),
+    -> jumlah char(80),
+    -> harga char(90)
+    -> );
+Query OK, 0 rows affected (0.029 sec)
+
+MariaDB [fleming]> insert into penjualan values('1224','limadewa','sri','5','780.000');                                Query OK, 1 row affected (0.025 sec)
+
+MariaDB [fleming]> select * from penjualan;                 +-----------+------------+------+--------+---------+       | kode_buku | judul_buku | nama | jumlah | harga   |
++-----------+------------+------+--------+---------+
+| 1224      | limadewa   | sri  | 5      | 780.000 |
++-----------+------------+------+--------+---------+
+1 row in set (0.002 sec)
+
+MariaDB [fleming]> insert into penjualan values('0097','powerangerd','wahyu','9','60.000');
+Query OK, 1 row affected (0.014 sec)
+
+MariaDB [fleming]> select * from penjualan;                 +-----------+-------------+-------+--------+---------+
+| kode_buku | judul_buku  | nama  | jumlah | harga   |
++-----------+-------------+-------+--------+---------+
+| 1224      | limadewa    | sri   | 5      | 780.000 |
+| 0097      | powerangerd | wahyu | 9      | 60.000  |
++-----------+-------------+-------+--------+---------+
+2 rows in set (0.004 sec)
+
+MariaDB [fleming]>
